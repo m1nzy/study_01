@@ -1,0 +1,206 @@
+@import url("/css/default.css");
+#header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  padding: 0 80px;
+  background: #fff;
+  z-index: 100;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+#header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  width: 100vw;
+  height: 0;
+  background: #fff;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+}
+#header .header_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+}
+#header .logo {
+  display: inline-block;
+  vertical-align: top;
+  width: 120px;
+  height: 40px;
+  background: url("/img/common/logo.png") no-repeat center/cover;
+  font-size: 0;
+}
+#header nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  min-width: 900px;
+}
+#header nav > ul > li {
+  display: inline-block;
+  position: relative;
+  width: 140px;
+  margin: 0 25px;
+  font-size: 18px;
+  font-weight: 500;
+}
+#header nav > ul .sub_list {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: calc(100% + 30px);
+  width: 165px;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  z-index: -100;
+}
+#header nav > ul .sub_list li {
+  margin-bottom: 14px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+#header.active:after {
+  height: 300px;
+  visibility: visible;
+  opacity: 1;
+}
+#header.active .sub_list {
+  visibility: visible;
+  height: 300px;
+  opacity: 1;
+  z-index: 1;
+}
+#header.active .sub_list li {
+  opacity: 1;
+}
+#header.on {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+#footer {
+  padding: 80px 0 60px;
+  background: #ff4713;
+  text-align: center;
+  color: #fff;
+}
+#footer .logo {
+  width: 180px;
+  height: 66px;
+  margin: 0 auto;
+  background: url("/img/common/logo-white.svg") no-repeat center/cover;
+  font-size: 0;
+}
+#footer ul {
+  max-width: 930px;
+  margin: 0 auto;
+  font-size: 0;
+}
+#footer ul li {
+  display: inline-block;
+  font-size: 14px;
+  color: #fff;
+}
+#footer .sns_list {
+  margin-top: 40px;
+}
+#footer .sns_list li {
+  width: 36px;
+  height: 36px;
+  margin: 0 36px;
+  font-size: 0;
+}
+#footer .sns_list li:nth-child(1) {
+  background: url("/img/common/f-link-n.svg") no-repeat center/cover;
+}
+#footer .sns_list li:nth-child(2) {
+  background: url("/img/common/f-link-y.svg") no-repeat center/cover;
+}
+#footer .sns_list li:nth-child(3) {
+  background: url("/img/common/f-link-i.svg") no-repeat center/cover;
+}
+#footer > a {
+  margin: 40px 0 50px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+#footer .info_list li {
+  line-height: 26px;
+}
+#footer .info_list li + li::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  margin: 0 10px;
+  background: #fff;
+  opacity: 0.2;
+}
+#footer dl {
+  display: inline-block;
+  font-size: 0;
+}
+#footer dl * {
+  display: inline-block;
+  letter-spacing: 0.35px;
+  font-size: 14px;
+}
+#footer dl dd {
+  margin: 0;
+}
+#footer dl dt:after {
+  content: ":";
+}
+#footer .copyright {
+  margin-top: 110px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
+
+.accessibility {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+}
+.accessibility a {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  height: 0;
+  padding: 0 5px;
+  text-align: center;
+}
+.accessibility a:focus {
+  height: auto;
+  padding: 5px;
+  background: #000;
+  text-decoration: underline;
+  color: #fff;
+}
+
+.skip {
+  display: none;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  color: transparent;
+}
